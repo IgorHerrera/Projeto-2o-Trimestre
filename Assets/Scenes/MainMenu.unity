@@ -304,8 +304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 59}
-  m_SizeDelta: {x: 100, y: 50}
+  m_AnchoredPosition: {x: 2, y: -204}
+  m_SizeDelta: {x: 166.4, y: 83.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &779501234
 MonoBehaviour:
@@ -378,7 +378,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 54cb305ef20755545977d5c0b35c2551, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a363f6b13b47064f932e8b529b0d9d9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -642,8 +642,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 179}
-  m_SizeDelta: {x: 1100, y: 250}
+  m_AnchoredPosition: {x: 0, y: 373}
+  m_SizeDelta: {x: 900, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466335026
 MonoBehaviour:
@@ -882,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1, y: 39}
-  m_SizeDelta: {x: 400, y: 301}
+  m_AnchoredPosition: {x: -1, y: 208}
+  m_SizeDelta: {x: 454.5, y: 66.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791883906
 MonoBehaviour:
@@ -904,7 +904,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: aeb252d5e55ff6e448aee2bb4d43b298, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b03b45f93a73b034e8213de66f2a1aff, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1194,7 +1194,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: '
+
+'
 --- !u!222 &2109954174
 CanvasRenderer:
   m_ObjectHideFlags: 0
