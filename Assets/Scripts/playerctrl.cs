@@ -8,13 +8,18 @@ public class playerctrl : MonoBehaviour {
 	public float JumpSpeed = 300f;
 	Rigidbody2D rb;
 	SpriteRenderer sr;
+    Animator anim;
+
+    bool isJumping = false;
+
+
 
 	// Use this for initialization
 	void Start () {
 		
 		rb = GetComponent<Rigidbody2D>();
 		sr = GetComponent<SpriteRenderer>();
-
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -26,8 +31,8 @@ public class playerctrl : MonoBehaviour {
 			MoveHorizontal(HorizontalPlayerSpeed);
 		}
 		else {
-			StopMovingHorizontal();
-		}
+            StopMovingHorizontal();
+        }
 
 		if (Input.GetButtonDown("Jump")) {
 			Jump();
@@ -43,15 +48,39 @@ public class playerctrl : MonoBehaviour {
 		else if (speed > 0f) {
 			sr.flipX = false;
 		}
-	}
 
-	void StopMovingHorizontal() {
+        if (!isJumping)
+        {
+            anim.SetInteger("State", 1);
+        }
+    }
+
+    void StopMovingHorizontal() {
 		rb.velocity = new Vector2(0f, rb.velocity.y);
+        if (!isJumping)
+        {
+            anim.SetInteger("State", 0);
+        }
+    }
 
-	}
+    void ShowFalling()
+    {
+        if (rb.velocity.y < 0f)
+        {
+            anim.SetInteger("State", 4);
+        }
+    }
 
 	void Jump() {
-		rb.AddForce(new Vector2(0f, JumpSpeed));
+        isJumping = true;
+        rb.AddForce(new Vector2(0f, JumpSpeed));
+        anim.SetInteger("State", 5);
+    }
 
-	}
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+            isJumping = false;
+        }
+    }
+
 }
