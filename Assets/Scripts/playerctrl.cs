@@ -12,7 +12,13 @@ public class playerctrl : MonoBehaviour {
 
     bool isJumping = false;
 
+    public Transform feet;
 
+    public float feetWidth = 0.5f;
+    public float feetHeigth = 0.1f;
+
+    public bool isGrounded;
+    public LayerMask whatisGround;
 
 	// Use this for initialization
 	void Start () {
@@ -21,9 +27,17 @@ public class playerctrl : MonoBehaviour {
 		sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(feet.position, new Vector3(feetWidth, feetHeigth, 0.5f));
+    }
+
+
+    // Update is called once per frame
+    void Update () {
+
+        isGrounded = Physics2D.OverlapBox(new Vector2(feet.position.x, feet.position.y), new Vector2(feetWidth, feetHeigth), 360.0f, whatisGround);
 		
 		float HorizontalInput = Input.GetAxisRaw("Horizontal");
 		float HorizontalPlayerSpeed = HorizontalSpeed * HorizontalInput;
