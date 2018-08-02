@@ -86,9 +86,11 @@ public class playerctrl : MonoBehaviour {
     }
 
 	void Jump() {
+        if (isGrounded) {
         isJumping = true;
         rb.AddForce(new Vector2(0f, JumpSpeed));
         anim.SetInteger("State", 5);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other) {
