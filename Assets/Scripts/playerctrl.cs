@@ -37,6 +37,11 @@ public class playerctrl : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+        if (transform.position.y < GM.instance.yMinLive)
+        {
+            GM.instance.KillPlayer();
+        }
+
         isGrounded = Physics2D.OverlapBox(new Vector2(feet.position.x, feet.position.y), new Vector2(feetWidth, feetHeigth), 360.0f, whatisGround);
 		
 		float HorizontalInput = Input.GetAxisRaw("Horizontal");
@@ -96,6 +101,15 @@ public class playerctrl : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) {
             isJumping = false;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            SFxManager.instance.ShowCoinParticles(other.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
