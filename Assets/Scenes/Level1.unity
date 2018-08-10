@@ -12082,3 +12082,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1127e85929fe4934282af0976b289f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinParticles: {fileID: 1965753410403672, guid: 19cad98b2879bc8419ed9c4eeb59674c,
+    type: 2}

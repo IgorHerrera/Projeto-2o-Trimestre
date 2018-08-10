@@ -17,11 +17,13 @@ public class GM : MonoBehaviour {
 	
 	public static GM instance = null;
 
-	void Awake() {
-		if (instance == null) {
-			instance = this;
-		}
-
+    void Awake( )
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 	// Use this for initialization
 	void Start () {
 		if (player == null)

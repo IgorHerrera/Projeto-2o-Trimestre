@@ -18,6 +18,6 @@ public class SFxManager : MonoBehaviour {
     }
     public void ShowCoinParticles(GameObject obj)
     {
-        Instantiate(coinParticles, obj.transform.position, Quaternion.identity);
+        Instantiate(coinParticles, obj.transform.position, Quaternion.Euler(180f,0f,0f));
     }
 }

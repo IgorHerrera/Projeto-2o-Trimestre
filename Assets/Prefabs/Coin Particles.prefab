@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4215145082228152}
   - component: {fileID: 198130863399330022}
+  - component: {fileID: 114499845500867912}
   - component: {fileID: 199222543861473008}
   m_Layer: 8
   m_Name: Coin Particles
@@ -36,11 +37,23 @@ Transform:
   m_GameObject: {fileID: 1965753410403672}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: -1.9, y: 0.48, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &114499845500867912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965753410403672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f93239f969cec4290de621d1e90b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 2
 --- !u!198 &198130863399330022
 ParticleSystem:
   m_ObjectHideFlags: 1
