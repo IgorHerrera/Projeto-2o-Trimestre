@@ -93,6 +93,7 @@ public class playerctrl : MonoBehaviour {
 	void Jump() {
         if (isGrounded) {
         isJumping = true;
+            AudioManager.instance.PlayJumpSound(gameObject);
         rb.AddForce(new Vector2(0f, JumpSpeed));
         anim.SetInteger("State", 5);
         }
@@ -108,6 +109,7 @@ public class playerctrl : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Coin"))
         {
+            AudioManager.instance.PlayCoinPickupSound(other.gameObject);
             SFxManager.instance.ShowCoinParticles(other.gameObject);
             Destroy(other.gameObject);
         }
