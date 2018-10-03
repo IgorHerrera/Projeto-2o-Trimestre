@@ -17,6 +17,10 @@ public class GM : MonoBehaviour {
 	
 	public static GM instance = null;
 
+    public UI ui;
+
+    GameData data = new GameData();
+
     void Awake( )
     {
         if (instance == null)
@@ -42,7 +46,18 @@ public class GM : MonoBehaviour {
                 player = obj.GetComponent<playerctrl>();
             }
         }
+        DisplayHudData();
 	}
+
+    void DisplayHudData()
+    {
+        ui.hud.txtCoinCount.text = "x 0" + data.coinCount;
+    }
+
+    public void IncrementCoinCount()
+    {
+        data.coinCount++;
+    }
 
     public void RespawnPlayer()
     {

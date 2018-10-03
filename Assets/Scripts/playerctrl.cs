@@ -111,6 +111,7 @@ public class playerctrl : MonoBehaviour {
         {
             AudioManager.instance.PlayCoinPickupSound(other.gameObject);
             SFxManager.instance.ShowCoinParticles(other.gameObject);
+            GM.instance.IncrementCoinCount();
             Destroy(other.gameObject);
         }
     }
